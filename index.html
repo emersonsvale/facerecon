@@ -1,39 +1,21 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reconhecimento Facial</title>
-    <script defer src="https://dev-front.apifacialid.com.br/facerecon/facerecon.js?v=1.1.1"></script>
-    <style>
-      html, body {
-        margin: 0;
-        padding: 0;
-        background-color: #000;
-        height: 100%;
-        width: 100%;
-        overflow: hidden;
-      }
-      #faceArea {
-        width: 100%;
-        height: 100%;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="faceArea"></div>
-    <script>
-      const faceRecon = new CID.FaceRecon({
-        onDetection: (img) => {
-          console.log("Imagem detectada:", img);
-          // Aqui você pode fazer um fetch para Supabase/n8n se quiser
-        },
-        element: document.getElementById("faceArea"),
-        tolerance: 90,
-        automaticDetection: true,
-        playSize: 1,
-      });
-      faceRecon.run();
-    </script>
-  </body>
-</html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Permissions-Policy" content="camera=*, microphone=*">
+  <title>Reconhecimento Facial</title>
+  <script defer src="https://dev-front.apifacialid.com.br/facerecon/facerecon.js?v=1.1.1"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+    #faceArea {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
